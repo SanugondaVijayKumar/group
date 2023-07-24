@@ -1,0 +1,138 @@
+/* body {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+header {
+    background-color: grey;
+}
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    background-color: rgb(85, 60, 177);
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+#message {
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 25px;
+    font-style: italic;
+}
+
+#message-button {
+    border-radius: 10px;
+} */
+
+/* chat.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#group-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#group-form a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button#signOut {
+    float: right;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#chat-list, #chat-body {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-list h4, #chat-body h4 {
+    text-align: center;
+    color: #333;
+}
+
+#chat-list div, #chat-body div {
+    margin-top: 10px;
+    color: #333;
+}
+
+footer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+#lmessage {
+    margin-right: 10px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button#message-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button#message-button:hover {
+    background-color: #0056b3;
+}

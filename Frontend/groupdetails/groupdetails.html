@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #signOut {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #signOut:hover {
+            text-decoration: underline;
+        }
+
+        .add-people {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-people h4 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        #add-to-group {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #add-to-group:hover {
+            background-color: #0056b3;
+        }
+
+        .listofparticipants {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .listofparticipants h4 {
+            text-align: center;
+            color: #333;
+        }
+
+        .grpparticipants {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .group-msgs {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-msgs h4 {
+            text-align: center;
+            color: #333;
+        }
+
+        .all-msgs {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .msg {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .sendmsg {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sendmsg:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div id="heading">
+        <button id="signOut">SignOut</button>
+    </div>
+
+    <div class="add-people">
+        <h4>Add to Group</h4>
+        <input type="email" id="emailId" placeholder="Enter Email">
+        <select name="" id="adminvalue">
+            <option value="false">admin:false</option>
+            <option value="true">admin:true</option>
+        </select>
+        <button id="add-to-group">Add Participant</button>
+    </div>
+    
+
+    <div class="listofparticipants">
+        <h4>Participants in the Group are: </h4>
+        <div class="grpparticipants"></div>
+    </div>
+
+    <div class="group-msgs">
+        <h4>Group Chat</h4>
+        <div class="all-msgs"></div>
+    </div>
+
+    <div class="msg">
+        <input type="text" id="input-text">
+        <button class="sendmsg">Send</button>
+    </div>
+
+    <script src="./groupdetails.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+</body>
+</html>
