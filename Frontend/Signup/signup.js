@@ -17,7 +17,7 @@ async function signup(event){
         if(response.status === 200)
         {
             alert('User successfully created. Please Login');
-            window.location.href = '../login/login.html';
+            window.location.href = '../login/index.html';
             console.log("User Successfully Registered");
         }
         else if(response.status === 404){

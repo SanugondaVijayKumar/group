@@ -8,7 +8,7 @@ let signout = document.querySelector('#signOut');
 
 signout.addEventListener('click', () => {
     localStorage.clear();
-    location.replace("../login/login.html");
+    location.replace("../login/index.html");
 })
 
 addtogroup.addEventListener('click', async () => {

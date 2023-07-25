@@ -47,6 +47,6 @@ console.log(err);
 
 document.getElementById('signOut').onclick = () => {
     localStorage.clear();
-    window.location.href = "../login/login.html";
+    window.location.href = "../login/index.html";
 }
 
