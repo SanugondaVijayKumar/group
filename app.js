@@ -39,7 +39,7 @@ app.use('/group', groupRoutes);
 app.use('/content', contentRoutes);
 
 app.use((req,res) => {
-    res.sendFile(path.join(__dirname, `Frontend/${req.url}`));
+    res.sendFile(path.join(__dirname, `Frontend/login/${req.url}`));
 });
 
 
