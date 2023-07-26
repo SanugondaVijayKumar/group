@@ -13,13 +13,12 @@ async function signup(event){
         password
     }
     console.log(userDetails);
-    const response = await axios.post('
-https://fine-cowboy-hat-fish.cyclic.app:3000/user/signup', userDetails);
+    const response = await axios.post('http://localhost:3000/user/signup', userDetails);
         if(response.status === 200)
         {
             alert('User successfully created. Please Login');
-            window.location.href = '../login/index.html';
             console.log("User Successfully Registered");
+            window.location.replace= 'http://localhost:3000/Frontend/login/index.html';
         }
         else if(response.status === 404){
             alert('User already Exist');

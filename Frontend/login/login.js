@@ -9,13 +9,12 @@ async function login(event){
             password
         }
         console.log(loginDetails);
-        const response = await axios.post('
-https://fine-cowboy-hat-fish.cyclic.app:3000/user/login', loginDetails)
+        const response = await axios.post('http://localhost:3000/user/login', loginDetails)
         email.value = '';
         password.value = '';
         alert(response.data.message);
         localStorage.setItem('token', response.data.token);
-        window.location.href = '../chat/chat.html';
+        window.location.replace = 'http://localhost:3000/Frontend/login/chat.html';
     }
     catch(err){
         console.log(JSON.stringify(err));

@@ -8,7 +8,7 @@ async function creategroup(event){
         groupName
     };
     const response = await axios.post('
-https://fine-cowboy-hat-fish.cyclic.app:3000/group/creategroup', groupDetails, {headers: {'Authorization': token}});
+http://localhost:3000/group/creategroup', groupDetails, {headers: {'Authorization': token}});
     if(response.status === 200){
         console.log(response.data.message);
         window.location.reload();
@@ -23,7 +23,7 @@ https://fine-cowboy-hat-fish.cyclic.app:3000/group/creategroup', groupDetails, {
 window.addEventListener('DOMContentLoaded', async () => {
     try{
         const response = await axios.get('
-https://fine-cowboy-hat-fish.cyclic.app:3000/group/getallgroups', {headers: {'Authorization': token}});
+http://localhost:3000/group/getallgroups', {headers: {'Authorization': token}});
         console.log(response.data);
         if(response.status === 200){
             let grps = '';
