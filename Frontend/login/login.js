@@ -9,12 +9,12 @@ async function login(event){
             password
         }
         console.log(loginDetails);
-        const response = await axios.post('http://localhost:3000/user/login', loginDetails)
+        const response = await axios.post('https://vijay-group-chat.onrender.com/user/login', loginDetails)
         email.value = '';
         password.value = '';
         alert(response.data.message);
         localStorage.setItem('token', response.data.token);
-        window.location.replace = 'http://localhost:3000/Frontend/login/chat.html';
+        window.location.replace = 'https://vijay-group-chat.onrender.com/Frontend/login/chat.html';
     }
     catch(err){
         console.log(JSON.stringify(err));

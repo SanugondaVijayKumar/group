@@ -21,7 +21,7 @@ addtogroup.addEventListener('click', async () => {
         };
         console.log(obj);
         const response = await axios.post(`
-http://localhost:3000/content/addparticipant/${id}`, obj, {headers: {'Authorization': token}});
+https://vijay-group-chat.onrender.com/content/addparticipant/${id}`, obj, {headers: {'Authorization': token}});
         // console.log(response);
         if(response.status === 200)
         {
@@ -47,7 +47,7 @@ sendmsg.addEventListener('click', async () => {
             message: inputvalue
         }
         const response = await axios.post(`
-http://localhost:3000/content/sendmessage/${id}`, obj, {headers: {'Authorization': token}});
+https://vijay-group-chat.onrender.com/content/sendmessage/${id}`, obj, {headers: {'Authorization': token}});
         if(response.status === 200)
         {
             console.log(response.data.message);
@@ -67,7 +67,7 @@ setInterval( async () => {
         let id = window.location.href.split('=')[1];
 
         const response = await axios.get(`
-http://localhost:3000/content/getgrpmessages/${id}`, {headers: {'Authorization': token}});
+https://vijay-group-chat.onrender.com/content/getgrpmessages/${id}`, {headers: {'Authorization': token}});
         if(response.status === 200){
             let len = '';
             for(let i=0;i<response.data.data.length;i++)
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded',async () => {
     try{
         let id = window.location.href.split('=')[1];
         const response = await axios.get(`
-http://localhost:3000/content/grpparticipants/${id}`, {headers: {'Authorization': token}});
+https://vijay-group-chat.onrender.com/content/grpparticipants/${id}`, {headers: {'Authorization': token}});
         if(response.status === 200){
             let lop = '';
             for(let i= 0;i<response.data.data.length;i++)
@@ -133,7 +133,7 @@ grpparticipants.addEventListener('click', async (e) => {
                 userIdUpdate: uid
             }
             const response = await axios.post(`
-http://localhost:3000/content/makeuseradmin/${id}`, obj,{headers: {"Authorization": token}});
+https://vijay-group-chat.onrender.com/content/makeuseradmin/${id}`, obj,{headers: {"Authorization": token}});
             alert(response.data.message);
             location.reload();
         }
@@ -146,7 +146,7 @@ http://localhost:3000/content/makeuseradmin/${id}`, obj,{headers: {"Authorizatio
                 userIdDelete: uid
             }
             const response = await axios.post(`
-http://localhost:3000/content/removeuser/${id}`, obj, {headers: {'Authorization': token}});
+https://vijay-group-chat.onrender.com/content/removeuser/${id}`, obj, {headers: {'Authorization': token}});
             alert(response.data.message);
             location.reload();
         }

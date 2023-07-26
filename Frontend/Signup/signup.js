@@ -13,12 +13,12 @@ async function signup(event){
         password
     }
     console.log(userDetails);
-    const response = await axios.post('http://localhost:3000/user/signup', userDetails);
+    const response = await axios.post('https://vijay-group-chat.onrender.com/user/signup', userDetails);
         if(response.status === 200)
         {
             alert('User successfully created. Please Login');
             console.log("User Successfully Registered");
-            window.location.replace= 'http://localhost:3000/Frontend/login/index.html';
+            window.location.replace= 'https://vijay-group-chat.onrender.com/Frontend/login/index.html';
         }
         else if(response.status === 404){
             alert('User already Exist');

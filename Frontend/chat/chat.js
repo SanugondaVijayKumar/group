@@ -44,7 +44,7 @@ const socket = io('https: //fine-cowboy-hat-fish.cyclic.app:3000:3000');
         // Function to fetch all existing messages from the server and display them
         async function fetchAndDisplayMessages() {
             try {
-                const response = await axios.get('http://localhost:3000/message/getallmessages', {
+                const response = await axios.get('https://vijay-group-chat.onrender.com/message/getallmessages', {
                     headers: {
                         'Authorization': token
                     }
