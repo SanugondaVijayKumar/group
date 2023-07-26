@@ -20,7 +20,8 @@ addtogroup.addEventListener('click', async () => {
             admin: adminvalue.value
         };
         console.log(obj);
-        const response = await axios.post(`https://vijay-group-chat.onrender.com:3000/content/addparticipant/${id}`, obj, {headers: {'Authorization': token}});
+        const response = await axios.post(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/addparticipant/${id}`, obj, {headers: {'Authorization': token}});
         // console.log(response);
         if(response.status === 200)
         {
@@ -45,7 +46,8 @@ sendmsg.addEventListener('click', async () => {
         let obj = {
             message: inputvalue
         }
-        const response = await axios.post(`https://vijay-group-chat.onrender.com:3000/content/sendmessage/${id}`, obj, {headers: {'Authorization': token}});
+        const response = await axios.post(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/sendmessage/${id}`, obj, {headers: {'Authorization': token}});
         if(response.status === 200)
         {
             console.log(response.data.message);
@@ -64,7 +66,8 @@ setInterval( async () => {
     try{
         let id = window.location.href.split('=')[1];
 
-        const response = await axios.get(`https://vijay-group-chat.onrender.com:3000/content/getgrpmessages/${id}`, {headers: {'Authorization': token}});
+        const response = await axios.get(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/getgrpmessages/${id}`, {headers: {'Authorization': token}});
         if(response.status === 200){
             let len = '';
             for(let i=0;i<response.data.data.length;i++)
@@ -88,7 +91,8 @@ setInterval( async () => {
 document.addEventListener('DOMContentLoaded',async () => {
     try{
         let id = window.location.href.split('=')[1];
-        const response = await axios.get(`https://vijay-group-chat.onrender.com:3000/content/grpparticipants/${id}`, {headers: {'Authorization': token}});
+        const response = await axios.get(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/grpparticipants/${id}`, {headers: {'Authorization': token}});
         if(response.status === 200){
             let lop = '';
             for(let i= 0;i<response.data.data.length;i++)
@@ -128,7 +132,8 @@ grpparticipants.addEventListener('click', async (e) => {
             let obj = {
                 userIdUpdate: uid
             }
-            const response = await axios.post(`https://vijay-group-chat.onrender.com:3000/content/makeuseradmin/${id}`, obj,{headers: {"Authorization": token}});
+            const response = await axios.post(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/makeuseradmin/${id}`, obj,{headers: {"Authorization": token}});
             alert(response.data.message);
             location.reload();
         }
@@ -140,7 +145,8 @@ grpparticipants.addEventListener('click', async (e) => {
             let obj = {
                 userIdDelete: uid
             }
-            const response = await axios.post(`https://vijay-group-chat.onrender.com:3000/content/removeuser/${id}`, obj, {headers: {'Authorization': token}});
+            const response = await axios.post(`
+https://fine-cowboy-hat-fish.cyclic.app:3000/content/removeuser/${id}`, obj, {headers: {'Authorization': token}});
             alert(response.data.message);
             location.reload();
         }

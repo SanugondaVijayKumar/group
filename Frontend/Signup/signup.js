@@ -13,7 +13,8 @@ async function signup(event){
         password
     }
     console.log(userDetails);
-    const response = await axios.post('https://vijay-group-chat.onrender.com:3000/user/signup', userDetails);
+    const response = await axios.post('
+https://fine-cowboy-hat-fish.cyclic.app:3000/user/signup', userDetails);
         if(response.status === 200)
         {
             alert('User successfully created. Please Login');
