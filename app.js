@@ -9,6 +9,9 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 dotenv.config();
+const io = require('socket.io');
+const https=require('https');
+
 
 const sequelize = require('./util/database');
 
@@ -18,6 +21,10 @@ const Group = require('./models/creategroup');
 const userGroup = require('./models/usergroup');
 const GroupMessage = require('./models/groupmessage');
 const app = express();
+
+const server = require('http').createServer(app);
+const ioInstance = io(server);
+
 
 const userRoutes = require('./routes/user');
 const messageRoutes = require('./routes/message');
@@ -53,9 +60,35 @@ User.hasMany(GroupMessage);
 GroupMessage.belongsTo(User);
 
 
+// ... (existing code)
+
 sequelize.sync()
 .then((result) => {
-    app.listen(process.env.PORT || 3000);
+    const port = process.env.PORT || 3000;
+    server.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+
+    // Socket.IO connection and event handling
+    ioInstance.on('connection', (socket) => {
+        console.log('A user connected');
+
+        // Example event: Send a welcome message to the connected user
+        socket.emit('welcome', 'Welcome to the chat app!');
+
+        // Handle incoming messages from clients
+        socket.on('chat message', (msg) => {
+            console.log('Received message:', msg);
+
+            // Broadcast the message to all connected clients
+            ioInstance.emit('chat message', msg);
+        });
+
+        // Handle disconnection
+        socket.on('disconnect', () => {
+            console.log('A user disconnected');
+        });
+    });
 })
 .catch(err => {
     console.log(err);
