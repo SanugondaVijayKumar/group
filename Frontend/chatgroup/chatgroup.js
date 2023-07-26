@@ -7,7 +7,7 @@ async function creategroup(event){
     const groupDetails = {
         groupName
     };
-    const response = await axios.post('https://vijay-group-chat.onrender.com/group/creategroup', groupDetails, {headers: {'Authorization': token}});
+    const response = await axios.post('https://vijay-group-chat.onrender.com:3000/group/creategroup', groupDetails, {headers: {'Authorization': token}});
     if(response.status === 200){
         console.log(response.data.message);
         window.location.reload();
@@ -21,7 +21,7 @@ async function creategroup(event){
 
 window.addEventListener('DOMContentLoaded', async () => {
     try{
-        const response = await axios.get('https://vijay-group-chat.onrender.com/group/getallgroups', {headers: {'Authorization': token}});
+        const response = await axios.get('https://vijay-group-chat.onrender.com:3000/group/getallgroups', {headers: {'Authorization': token}});
         console.log(response.data);
         if(response.status === 200){
             let grps = '';

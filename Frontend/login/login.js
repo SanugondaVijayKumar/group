@@ -9,7 +9,7 @@ async function login(event){
             password
         }
         console.log(loginDetails);
-        const response = await axios.post('https://vijay-group-chat.onrender.com/user/login', loginDetails)
+        const response = await axios.post('https://vijay-group-chat.onrender.com:3000/user/login', loginDetails)
         email.value = '';
         password.value = '';
         alert(response.data.message);

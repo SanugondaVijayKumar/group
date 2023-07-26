@@ -8,7 +8,7 @@
 //     try{
 //         const message = document.getElementById('message').value;
 //         console.log(message);
-//         const response = await axios.post('https://vijay-group-chat.onrender.com/message/send',{message: message}, {headers:{'Authorization':token}});
+//         const response = await axios.post('https://vijay-group-chat.onrender.com:3000/message/send',{message: message}, {headers:{'Authorization':token}});
 //         message.value = '';
 //         console.log(response.data.message);
 //     }
@@ -21,7 +21,7 @@
 
 // setInterval(async () => {
 //     try{
-//     const response = await axios.get('https://vijay-group-chat.onrender.com/message/getallmessages', {headers: {'Authorization': token}});
+//     const response = await axios.get('https://vijay-group-chat.onrender.com:3000/message/getallmessages', {headers: {'Authorization': token}});
 //     // console.log(response.data);
 //     if(response.status === 200)
 //     {
@@ -55,7 +55,7 @@
 
 
 import {io} from "socket.io-client"
-const socket = io('https://vijay-group-chat.onrender.com');
+const socket = io('https://vijay-group-chat.onrender.com:3000:3000');
 
 const token = localStorage.getItem('token');
 let nam = '';
@@ -95,7 +95,7 @@ socket.on('chat message', (data) => {
 // Function to fetch all existing messages from the server and display them
 async function fetchAndDisplayMessages() {
     try {
-        const response = await axios.get('https://vijay-group-chat.onrender.com/message/getallmessages', { headers: { 'Authorization': token } });
+        const response = await axios.get('https://vijay-group-chat.onrender.com:3000/message/getallmessages', { headers: { 'Authorization': token } });
         if (response.status === 200) {
             let res = '';
             for (let i = 0; i < response.data.data.length; i++) {
